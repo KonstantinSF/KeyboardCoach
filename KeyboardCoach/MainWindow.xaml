@@ -14,6 +14,16 @@
                 </ContentControl>
             </Border>
         </ControlTemplate>
+        
+        
+        <SolidColorBrush x:Key="red" Color="PaleVioletRed"/>
+        <SolidColorBrush x:Key="yellow" Color="LightYellow"/>
+        <SolidColorBrush x:Key="green" Color="LightGreen"/>
+        <SolidColorBrush x:Key="blue" Color="LightBlue"/>
+        <SolidColorBrush x:Key="violet" Color="Violet"/>
+        <SolidColorBrush x:Key="grey" Color="Gray"/>
+        <SolidColorBrush x:Key="brown" Color="SandyBrown"/>
+        
     </Window.Resources>
     <Grid x:Name="mainGrid">
         <Grid.RowDefinitions>
@@ -207,7 +217,7 @@
                 <Button Grid.Column="0" x:Name="controlLeft" Template="{DynamicResource btnTemplate}" Content="Ctrl" FontSize="30" Background="PaleVioletRed"/>
                 <Button Grid.Column="1" x:Name="windowsLeft" Template="{DynamicResource btnTemplate}" Content="Win" FontSize="40" Background="PaleVioletRed"/>
                 <Button Grid.Column="2" x:Name="altLeft" Template="{DynamicResource btnTemplate}" Content="Alt" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="3" x:Name="space" Template="{DynamicResource btnTemplate}" Content="Space" FontSize="40" Background="PaleVioletRed"/>
+                <Button Grid.Column="3" x:Name="space" Template="{DynamicResource btnTemplate}" Content="Space" FontSize="40" Background="gray"/>
                 <Button Grid.Column="4" x:Name="altRight" Template="{DynamicResource btnTemplate}" Content="Alt" FontSize="40" Background="PaleVioletRed"/>
                 <Button Grid.Column="5" x:Name="windowsRight" Template="{DynamicResource btnTemplate}" Content="Win" FontSize="40" Background="PaleVioletRed"/>
                 <Button Grid.Column="6" x:Name="controlRight" Template="{DynamicResource btnTemplate}" Content="Ctrl" FontSize="40" Background="PaleVioletRed"/>
