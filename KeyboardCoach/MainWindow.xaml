@@ -17,7 +17,7 @@
         
         
         <SolidColorBrush x:Key="red" Color="PaleVioletRed"/>
-        <SolidColorBrush x:Key="yellow" Color="LightYellow"/>
+        <SolidColorBrush x:Key="yellow" Color="Yellow"/>
         <SolidColorBrush x:Key="green" Color="LightGreen"/>
         <SolidColorBrush x:Key="blue" Color="LightBlue"/>
         <SolidColorBrush x:Key="violet" Color="Violet"/>
@@ -96,20 +96,20 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <!--**************************FIRST ROW***********************************-->
-                <Button Grid.Column="0" x:Name="commaUp" Template="{DynamicResource btnTemplate}" Content="'" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="1" x:Name="one" Template="{DynamicResource btnTemplate}" Content="1" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="2" x:Name="two" Template="{DynamicResource btnTemplate}" Content="2" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="3" x:Name="three" Template="{DynamicResource btnTemplate}" Content="3" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="4" x:Name="four" Template="{DynamicResource btnTemplate}" Content="4" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="5" x:Name="five" Template="{DynamicResource btnTemplate}" Content="5" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="6" x:Name="six" Template="{DynamicResource btnTemplate}" Content="6" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="7" x:Name="seven" Template="{DynamicResource btnTemplate}" Content="7" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="8" x:Name="eight" Template="{DynamicResource btnTemplate}" Content="8" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="9" x:Name="nine" Template="{DynamicResource btnTemplate}" Content="9" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="10" x:Name="zero" Template="{DynamicResource btnTemplate}" Content="0" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="11" x:Name="minus" Template="{DynamicResource btnTemplate}" Content="-" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="12" x:Name="equal" Template="{DynamicResource btnTemplate}" Content="=" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="13" Grid.ColumnSpan="2" x:Name="Bspace" Template="{DynamicResource btnTemplate}" Content="Backspace" FontSize="25" Background="PaleVioletRed"/>
+                <Button Grid.Column="0" x:Name="commaUp" Template="{DynamicResource btnTemplate}" Content="'" FontSize="40" Background="{DynamicResource red}"/>
+                <Button Grid.Column="1" x:Name="one" Template="{DynamicResource btnTemplate}" Content="1" FontSize="40" Background="{DynamicResource red}"/>
+                <Button Grid.Column="2" x:Name="two" Template="{DynamicResource btnTemplate}" Content="2" FontSize="40" Background="{DynamicResource red}"/>
+                <Button Grid.Column="3" x:Name="three" Template="{DynamicResource btnTemplate}" Content="3" FontSize="40" Background="{DynamicResource yellow}"/>
+                <Button Grid.Column="4" x:Name="four" Template="{DynamicResource btnTemplate}" Content="4" FontSize="40" Background="{DynamicResource green}"/>
+                <Button Grid.Column="5" x:Name="five" Template="{DynamicResource btnTemplate}" Content="5" FontSize="40" Background="{DynamicResource blue}"/>
+                <Button Grid.Column="6" x:Name="six" Template="{DynamicResource btnTemplate}" Content="6" FontSize="40" Background="{DynamicResource blue}"/>
+                <Button Grid.Column="7" x:Name="seven" Template="{DynamicResource btnTemplate}" Content="7" FontSize="40" Background="{DynamicResource violet}"/>
+                <Button Grid.Column="8" x:Name="eight" Template="{DynamicResource btnTemplate}" Content="8" FontSize="40" Background="{DynamicResource violet}"/>
+                <Button Grid.Column="9" x:Name="nine" Template="{DynamicResource btnTemplate}" Content="9" FontSize="40" Background="{DynamicResource red}"/>
+                <Button Grid.Column="10" x:Name="zero" Template="{DynamicResource btnTemplate}" Content="0" FontSize="40" Background="{DynamicResource yellow}"/>
+                <Button Grid.Column="11" x:Name="minus" Template="{DynamicResource btnTemplate}" Content="-" FontSize="40" Background="{DynamicResource green}"/>
+                <Button Grid.Column="12" x:Name="equal" Template="{DynamicResource btnTemplate}" Content="=" FontSize="40" Background="{DynamicResource green}"/>
+                <Button Grid.Column="13" Grid.ColumnSpan="2" x:Name="Bspace" Template="{DynamicResource btnTemplate}" Content="Backspace" FontSize="25" Background="{DynamicResource grey}"/>
                 </Grid>
                 <!--**************************SECOND ROW***********************************-->
                 <Grid x:Name="secondRowGrid" Grid.Row="1">
@@ -129,20 +129,20 @@
                     <ColumnDefinition/>
                     <ColumnDefinition Width="1.5*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" x:Name="Tab" Template="{DynamicResource btnTemplate}" Content="Tab" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="1" x:Name="q" Template="{DynamicResource btnTemplate}" Content="q" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="2" x:Name="w" Template="{DynamicResource btnTemplate}" Content="w" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="3" x:Name="e" Template="{DynamicResource btnTemplate}" Content="e" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="4" x:Name="r" Template="{DynamicResource btnTemplate}" Content="r" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="5" x:Name="t" Template="{DynamicResource btnTemplate}" Content="t" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="6" x:Name="y" Template="{DynamicResource btnTemplate}" Content="y" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="7" x:Name="u" Template="{DynamicResource btnTemplate}" Content="u" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="8" x:Name="i" Template="{DynamicResource btnTemplate}" Content="i" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="9" x:Name="o" Template="{DynamicResource btnTemplate}" Content="o" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="10" x:Name="p" Template="{DynamicResource btnTemplate}" Content="p" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="11" x:Name="squareBracketLeft" Template="{DynamicResource btnTemplate}" Content="[" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="12" x:Name="squareBracketRight" Template="{DynamicResource btnTemplate}" Content="]" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="13" x:Name="backSlash" Template="{DynamicResource btnTemplate}" Content="/" FontSize="40" Background="PaleVioletRed"/>
+                <Button Grid.Column="0" x:Name="Tab" Template="{DynamicResource btnTemplate}" Content="Tab" FontSize="30" Background="{DynamicResource grey}"/>
+                <Button Grid.Column="1" x:Name="q" Template="{DynamicResource btnTemplate}" Content="q" FontSize="40" Background="{DynamicResource red}"/>
+                <Button Grid.Column="2" x:Name="w" Template="{DynamicResource btnTemplate}" Content="w" FontSize="40" Background="{DynamicResource yellow}"/>
+                <Button Grid.Column="3" x:Name="e" Template="{DynamicResource btnTemplate}" Content="e" FontSize="40" Background="{DynamicResource green}"/>
+                <Button Grid.Column="4" x:Name="r" Template="{DynamicResource btnTemplate}" Content="r" FontSize="40" Background="{DynamicResource blue}"/>
+                <Button Grid.Column="5" x:Name="t" Template="{DynamicResource btnTemplate}" Content="t" FontSize="40" Background="{DynamicResource blue}"/>
+                <Button Grid.Column="6" x:Name="y" Template="{DynamicResource btnTemplate}" Content="y" FontSize="40" Background="{DynamicResource violet}"/>
+                <Button Grid.Column="7" x:Name="u" Template="{DynamicResource btnTemplate}" Content="u" FontSize="40" Background="{DynamicResource violet}"/>
+                <Button Grid.Column="8" x:Name="i" Template="{DynamicResource btnTemplate}" Content="i" FontSize="40" Background="{DynamicResource red}"/>
+                <Button Grid.Column="9" x:Name="o" Template="{DynamicResource btnTemplate}" Content="o" FontSize="40" Background="{DynamicResource yellow}"/>
+                <Button Grid.Column="10" x:Name="p" Template="{DynamicResource btnTemplate}" Content="p" FontSize="40" Background="{DynamicResource green}"/>
+                <Button Grid.Column="11" x:Name="squareBracketLeft" Template="{DynamicResource btnTemplate}" Content="[" FontSize="40" Background="{DynamicResource green}"/>
+                <Button Grid.Column="12" x:Name="squareBracketRight" Template="{DynamicResource btnTemplate}" Content="]" FontSize="40" Background="{DynamicResource green}"/>
+                <Button Grid.Column="13" x:Name="backSlash" Template="{DynamicResource btnTemplate}" Content="/" FontSize="40" Background="{DynamicResource green}"/>
             </Grid>
                 <!--**************************THIRD ROW***********************************-->
             <Grid x:Name="thirdRowGrid" Grid.Row="2">
@@ -160,19 +160,19 @@
                     <ColumnDefinition/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" x:Name="capsLock" Template="{DynamicResource btnTemplate}" Content="Caps Lock" FontSize="30" Background="PaleVioletRed"/>
-                <Button Grid.Column="1" x:Name="a" Template="{DynamicResource btnTemplate}" Content="a" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="2" x:Name="s" Template="{DynamicResource btnTemplate}" Content="s" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="3" x:Name="d" Template="{DynamicResource btnTemplate}" Content="d" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="4" x:Name="f" Template="{DynamicResource btnTemplate}" Content="f" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="5" x:Name="g" Template="{DynamicResource btnTemplate}" Content="g" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="6" x:Name="h" Template="{DynamicResource btnTemplate}" Content="h" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="7" x:Name="j" Template="{DynamicResource btnTemplate}" Content="j" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="8" x:Name="k" Template="{DynamicResource btnTemplate}" Content="k" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="9" x:Name="l" Template="{DynamicResource btnTemplate}" Content="l" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="10" x:Name="semicolon" Template="{DynamicResource btnTemplate}" Content=";" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="11" x:Name="upperComma" Template="{DynamicResource btnTemplate}" Content="'" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="12" x:Name="Enter" Template="{DynamicResource btnTemplate}" Content="Enter" FontSize="30" Background="PaleVioletRed"/>
+                <Button Grid.Column="0" x:Name="capsLock" Template="{DynamicResource btnTemplate}" Content="Caps Lock" FontSize="30" Background="{DynamicResource grey}"/>
+                <Button Grid.Column="1" x:Name="a" Template="{DynamicResource btnTemplate}" Content="a" FontSize="40" Background="{DynamicResource red}"/>
+                <Button Grid.Column="2" x:Name="s" Template="{DynamicResource btnTemplate}" Content="s" FontSize="40" Background="{DynamicResource yellow}"/>
+                <Button Grid.Column="3" x:Name="d" Template="{DynamicResource btnTemplate}" Content="d" FontSize="40" Background="{DynamicResource blue}"/>
+                <Button Grid.Column="4" x:Name="f" Template="{DynamicResource btnTemplate}" Content="f" FontSize="40" Background="{DynamicResource blue}"/>
+                <Button Grid.Column="5" x:Name="g" Template="{DynamicResource btnTemplate}" Content="g" FontSize="40" Background="{DynamicResource violet}"/>
+                <Button Grid.Column="6" x:Name="h" Template="{DynamicResource btnTemplate}" Content="h" FontSize="40" Background="{DynamicResource violet}"/>
+                <Button Grid.Column="7" x:Name="j" Template="{DynamicResource btnTemplate}" Content="j" FontSize="40" Background="{DynamicResource red}"/>
+                <Button Grid.Column="8" x:Name="k" Template="{DynamicResource btnTemplate}" Content="k" FontSize="40" Background="{DynamicResource yellow}"/>
+                <Button Grid.Column="9" x:Name="l" Template="{DynamicResource btnTemplate}" Content="l" FontSize="40" Background="{DynamicResource green}"/>
+                <Button Grid.Column="10" x:Name="semicolon" Template="{DynamicResource btnTemplate}" Content=";" FontSize="40" Background="{DynamicResource green}"/>
+                <Button Grid.Column="11" x:Name="upperComma" Template="{DynamicResource btnTemplate}" Content="'" FontSize="40" Background="{DynamicResource green}"/>
+                <Button Grid.Column="12" x:Name="Enter" Template="{DynamicResource btnTemplate}" Content="Enter" FontSize="30" Background="{DynamicResource green}"/>
             </Grid>
                 <!--**************************FOURTH ROW***********************************-->
             <Grid x:Name="fourthRowGrid" Grid.Row="3">
@@ -190,18 +190,18 @@
                     <ColumnDefinition/>
                     <ColumnDefinition Width="2.5*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" x:Name="shiftLeft" Template="{DynamicResource btnTemplate}" Content="Shift" FontSize="30" Background="PaleVioletRed"/>
-                <Button Grid.Column="1" x:Name="z" Template="{DynamicResource btnTemplate}" Content="z" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="2" x:Name="x" Template="{DynamicResource btnTemplate}" Content="x" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="3" x:Name="c" Template="{DynamicResource btnTemplate}" Content="c" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="4" x:Name="v" Template="{DynamicResource btnTemplate}" Content="v" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="5" x:Name="b" Template="{DynamicResource btnTemplate}" Content="b" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="6" x:Name="n" Template="{DynamicResource btnTemplate}" Content="n" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="7" x:Name="m" Template="{DynamicResource btnTemplate}" Content="m" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="8" x:Name="comma" Template="{DynamicResource btnTemplate}" Content="," FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="9" x:Name="point" Template="{DynamicResource btnTemplate}" Content="." FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="10" x:Name="slash" Template="{DynamicResource btnTemplate}" Content="/" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="11" x:Name="shiftRight" Template="{DynamicResource btnTemplate}" Content="Shift" FontSize="30" Background="PaleVioletRed"/>
+                <Button Grid.Column="0" x:Name="shiftLeft" Template="{DynamicResource btnTemplate}" Content="Shift" FontSize="30" Background="{DynamicResource grey}"/>
+                <Button Grid.Column="1" x:Name="z" Template="{DynamicResource btnTemplate}" Content="z" FontSize="40" Background="{DynamicResource red}"/>
+                <Button Grid.Column="2" x:Name="x" Template="{DynamicResource btnTemplate}" Content="x" FontSize="40" Background="{DynamicResource yellow}"/>
+                <Button Grid.Column="3" x:Name="c" Template="{DynamicResource btnTemplate}" Content="c" FontSize="40" Background="{DynamicResource green}"/>
+                <Button Grid.Column="4" x:Name="v" Template="{DynamicResource btnTemplate}" Content="v" FontSize="40" Background="{DynamicResource blue}"/>
+                <Button Grid.Column="5" x:Name="b" Template="{DynamicResource btnTemplate}" Content="b" FontSize="40" Background="{DynamicResource blue}"/>
+                <Button Grid.Column="6" x:Name="n" Template="{DynamicResource btnTemplate}" Content="n" FontSize="40" Background="{DynamicResource violet}"/>
+                <Button Grid.Column="7" x:Name="m" Template="{DynamicResource btnTemplate}" Content="m" FontSize="40" Background="{DynamicResource violet}"/>
+                <Button Grid.Column="8" x:Name="comma" Template="{DynamicResource btnTemplate}" Content="," FontSize="40" Background="{DynamicResource red}"/>
+                <Button Grid.Column="9" x:Name="point" Template="{DynamicResource btnTemplate}" Content="." FontSize="40" Background="{DynamicResource yellow}"/>
+                <Button Grid.Column="10" x:Name="slash" Template="{DynamicResource btnTemplate}" Content="/" FontSize="40" Background="{DynamicResource green}"/>
+                <Button Grid.Column="11" x:Name="shiftRight" Template="{DynamicResource btnTemplate}" Content="Shift" FontSize="30" Background="{DynamicResource grey}"/>
             </Grid>
                 <!--**************************FIFTH ROW***********************************-->
             <Grid x:Name="fifthRowGrid" Grid.Row="4">
@@ -214,13 +214,13 @@
                     <ColumnDefinition Width="1.5*"/>
                     <ColumnDefinition Width="1.5*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" x:Name="controlLeft" Template="{DynamicResource btnTemplate}" Content="Ctrl" FontSize="30" Background="PaleVioletRed"/>
-                <Button Grid.Column="1" x:Name="windowsLeft" Template="{DynamicResource btnTemplate}" Content="Win" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="2" x:Name="altLeft" Template="{DynamicResource btnTemplate}" Content="Alt" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="3" x:Name="space" Template="{DynamicResource btnTemplate}" Content="Space" FontSize="40" Background="gray"/>
-                <Button Grid.Column="4" x:Name="altRight" Template="{DynamicResource btnTemplate}" Content="Alt" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="5" x:Name="windowsRight" Template="{DynamicResource btnTemplate}" Content="Win" FontSize="40" Background="PaleVioletRed"/>
-                <Button Grid.Column="6" x:Name="controlRight" Template="{DynamicResource btnTemplate}" Content="Ctrl" FontSize="40" Background="PaleVioletRed"/>
+                <Button Grid.Column="0" x:Name="controlLeft" Template="{DynamicResource btnTemplate}" Content="Ctrl" FontSize="30" Background="{DynamicResource grey}"/>
+                <Button Grid.Column="1" x:Name="windowsLeft" Template="{DynamicResource btnTemplate}" Content="Win" FontSize="30" Background="{DynamicResource grey}"/>
+                <Button Grid.Column="2" x:Name="altLeft" Template="{DynamicResource btnTemplate}" Content="Alt" FontSize="30" Background="{DynamicResource grey}"/>
+                <Button Grid.Column="3" x:Name="space" Template="{DynamicResource btnTemplate}" Content="Space" FontSize="30" Background="{DynamicResource gre}"/>
+                <Button Grid.Column="4" x:Name="altRight" Template="{DynamicResource btnTemplate}" Content="Alt" FontSize="30" Background="PaleVioletRed"/>
+                <Button Grid.Column="5" x:Name="windowsRight" Template="{DynamicResource btnTemplate}" Content="Win" FontSize="30" Background="PaleVioletRed"/>
+                <Button Grid.Column="6" x:Name="controlRight" Template="{DynamicResource btnTemplate}" Content="Ctrl" FontSize="30" Background="PaleVioletRed"/>
             </Grid>
         </Grid>
 
