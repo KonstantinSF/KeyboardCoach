@@ -6,15 +6,14 @@
         xmlns:local="clr-namespace:KeyboardCoach"
         xmlns:Properties="clr-namespace:KeyboardCoach.Properties" x:Class="KeyboardCoach.MainWindow"
         mc:Ignorable="d"
-        Title="KeyboardCoach" Height="650" Width="1200" MinWidth="700" MinHeight="400">
+        Title="KeyboardCoach" Height="650" Width="1200" MinWidth="700" MinHeight="400" KeyDown="Window_KeyDown" KeyUp="Window_KeyUp">
     <Window.Resources>
         <ControlTemplate x:Key="btnTemplate" TargetType="Button">
             <Border BorderBrush="Black" BorderThickness="5" CornerRadius="15" Margin="5" Background="{TemplateBinding Background}">
-                <ContentControl FontSize="{TemplateBinding FontSize}" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}" IsEnabled="False">
+                <ContentControl FontSize="{TemplateBinding FontSize}" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}">
                 </ContentControl>
             </Border>
         </ControlTemplate>
-        
         
         <SolidColorBrush x:Key="red" Color="PaleVioletRed"/>
         <SolidColorBrush x:Key="yellow" Color="Yellow"/>
@@ -31,7 +30,6 @@
             <RowDefinition Height="1*" MinHeight="15"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-
         <Grid x:Name="topPanelGrid" Grid.Row="0">
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -57,8 +55,8 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="Start" Content="Start" Margin="5" MinWidth="100" Grid.Column="0" FontSize="18"/>
-                <Button x:Name="Stop" Content="Stop" Margin="5" MinWidth="100" Grid.Column="1" FontSize="18"/>
+                <Button x:Name="Start" Content="Start" Margin="5" MinWidth="100" Grid.Column="0" FontSize="18" Click="StartBtn_Click"/>
+                <Button x:Name="Stop" Content="Stop" Margin="5" MinWidth="100" Grid.Column="1" FontSize="18" Click="StopBtn_Click"/>
             </Grid>
         </Grid>
         <Grid x:Name="textBoxFieldGrid" Grid.Row="1" Background="LightBlue">
@@ -69,7 +67,7 @@
             <TextBox x:Name="ExampleText" FontSize="20" Margin="2" Focusable="False" Grid.Row="0" VerticalAlignment="Stretch" Background="{Binding Background, ElementName=grid}" Foreground="OrangeRed"/>
             <TextBox x:Name="InputText" FontSize="20" VerticalAlignment="Center" Margin="2" Focusable="True" Grid.Row="1" Background="{Binding Background, ElementName=grid}"/>
         </Grid>
-        <Grid x:Name="buttonsGrid" Grid.Row="2">
+        <Grid x:Name="buttonsGrid" Grid.Row="2" >
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -96,7 +94,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <!--**************************FIRST ROW***********************************-->
-                <Button Grid.Column="0" x:Name="commaUp" Template="{DynamicResource btnTemplate}" Content="'" FontSize="40" Background="{DynamicResource red}"/>
+                <Button Grid.Column="0" x:Name="gravis" Template="{DynamicResource btnTemplate}" Content="'" FontSize="40" Background="{DynamicResource red}"/>
                 <Button Grid.Column="1" x:Name="one" Template="{DynamicResource btnTemplate}" Content="1" FontSize="40" Background="{DynamicResource red}"/>
                 <Button Grid.Column="2" x:Name="two" Template="{DynamicResource btnTemplate}" Content="2" FontSize="40" Background="{DynamicResource red}"/>
                 <Button Grid.Column="3" x:Name="three" Template="{DynamicResource btnTemplate}" Content="3" FontSize="40" Background="{DynamicResource yellow}"/>
@@ -132,7 +130,7 @@
                 <Button Grid.Column="0" x:Name="Tab" Template="{DynamicResource btnTemplate}" Content="Tab" FontSize="30" Background="{DynamicResource grey}"/>
                 <Button Grid.Column="1" x:Name="q" Template="{DynamicResource btnTemplate}" Content="q" FontSize="40" Background="{DynamicResource red}"/>
                 <Button Grid.Column="2" x:Name="w" Template="{DynamicResource btnTemplate}" Content="w" FontSize="40" Background="{DynamicResource yellow}"/>
-                <Button Grid.Column="3" x:Name="e" Template="{DynamicResource btnTemplate}" Content="e" FontSize="40" Background="{DynamicResource green}"/>
+                <Button Grid.Column="3" x:Name="ee" Template="{DynamicResource btnTemplate}" Content="e" FontSize="40" Background="{DynamicResource green}"/>
                 <Button Grid.Column="4" x:Name="r" Template="{DynamicResource btnTemplate}" Content="r" FontSize="40" Background="{DynamicResource blue}"/>
                 <Button Grid.Column="5" x:Name="t" Template="{DynamicResource btnTemplate}" Content="t" FontSize="40" Background="{DynamicResource blue}"/>
                 <Button Grid.Column="6" x:Name="y" Template="{DynamicResource btnTemplate}" Content="y" FontSize="40" Background="{DynamicResource violet}"/>
@@ -217,10 +215,10 @@
                 <Button Grid.Column="0" x:Name="controlLeft" Template="{DynamicResource btnTemplate}" Content="Ctrl" FontSize="30" Background="{DynamicResource grey}"/>
                 <Button Grid.Column="1" x:Name="windowsLeft" Template="{DynamicResource btnTemplate}" Content="Win" FontSize="30" Background="{DynamicResource grey}"/>
                 <Button Grid.Column="2" x:Name="altLeft" Template="{DynamicResource btnTemplate}" Content="Alt" FontSize="30" Background="{DynamicResource grey}"/>
-                <Button Grid.Column="3" x:Name="space" Template="{DynamicResource btnTemplate}" Content="Space" FontSize="30" Background="{DynamicResource gre}"/>
-                <Button Grid.Column="4" x:Name="altRight" Template="{DynamicResource btnTemplate}" Content="Alt" FontSize="30" Background="PaleVioletRed"/>
-                <Button Grid.Column="5" x:Name="windowsRight" Template="{DynamicResource btnTemplate}" Content="Win" FontSize="30" Background="PaleVioletRed"/>
-                <Button Grid.Column="6" x:Name="controlRight" Template="{DynamicResource btnTemplate}" Content="Ctrl" FontSize="30" Background="PaleVioletRed"/>
+                <Button Grid.Column="3" x:Name="space" Template="{DynamicResource btnTemplate}" Content="Space" FontSize="30" Background="{DynamicResource brown}"/>
+                <Button Grid.Column="4" x:Name="altRight" Template="{DynamicResource btnTemplate}" Content="Alt" FontSize="30" Background="{DynamicResource grey}"/>
+                <Button Grid.Column="5" x:Name="windowsRight" Template="{DynamicResource btnTemplate}" Content="Win" FontSize="30" Background="{DynamicResource grey}"/>
+                <Button Grid.Column="6" x:Name="controlRight" Template="{DynamicResource btnTemplate}" Content="Ctrl" FontSize="30" Background="{DynamicResource grey}"/>
             </Grid>
         </Grid>
 
