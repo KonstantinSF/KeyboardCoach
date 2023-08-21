@@ -94,7 +94,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <!--**************************FIRST ROW***********************************-->
-                <Button Grid.Column="0" x:Name="gravis" Template="{DynamicResource btnTemplate}" Content="'" FontSize="40" Background="{DynamicResource red}"/>
+                <Button Grid.Column="0" x:Name="gravis" Template="{DynamicResource btnTemplate}" Content="`" FontSize="40" Background="{DynamicResource red}"/>
                 <Button Grid.Column="1" x:Name="one" Template="{DynamicResource btnTemplate}" Content="1" FontSize="40" Background="{DynamicResource red}"/>
                 <Button Grid.Column="2" x:Name="two" Template="{DynamicResource btnTemplate}" Content="2" FontSize="40" Background="{DynamicResource red}"/>
                 <Button Grid.Column="3" x:Name="three" Template="{DynamicResource btnTemplate}" Content="3" FontSize="40" Background="{DynamicResource yellow}"/>
