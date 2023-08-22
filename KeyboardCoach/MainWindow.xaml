@@ -6,13 +6,19 @@
         xmlns:local="clr-namespace:KeyboardCoach"
         xmlns:Properties="clr-namespace:KeyboardCoach.Properties" x:Class="KeyboardCoach.MainWindow"
         mc:Ignorable="d"
-        Title="KeyboardCoach" Height="650" Width="1200" MinWidth="700" MinHeight="400" KeyDown="Window_KeyDown" KeyUp="Window_KeyUp">
+        Title="KeyboardCoach" Height="650" Width="1200" MinWidth="700" MinHeight="400" 
+        KeyDown="Window_KeyDown" KeyUp="Window_KeyUp">
     <Window.Resources>
         <ControlTemplate x:Key="btnTemplate" TargetType="Button">
-            <Border BorderBrush="Black" BorderThickness="5" CornerRadius="15" Margin="5" Background="{TemplateBinding Background}">
+            <Border x:Name="buttonBorder" BorderBrush="Black" BorderThickness="5" CornerRadius="15" Margin="5" Background="{TemplateBinding Background}">
                 <ContentControl FontSize="{TemplateBinding FontSize}" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}">
                 </ContentControl>
             </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="buttonBorder" Property="BorderBrush" Value="Gray"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
         </ControlTemplate>
         
         <SolidColorBrush x:Key="red" Color="PaleVioletRed"/>
@@ -65,7 +71,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBox x:Name="ExampleText" FontSize="20" Margin="2" Focusable="False" Grid.Row="0" VerticalAlignment="Stretch" Background="{Binding Background, ElementName=grid}" Foreground="OrangeRed"/>
-            <TextBox x:Name="InputText" FontSize="20" VerticalAlignment="Center" Margin="2" Focusable="True" Grid.Row="1" Background="{Binding Background, ElementName=grid}"/>
+            <TextBox x:Name="InputText" FontSize="20" VerticalAlignment="Center" Margin="2" Focusable="True" Grid.Row="1" Background="{Binding Background, ElementName=grid}" TextInput="Input_KeyDown"/>
         </Grid>
         <Grid x:Name="buttonsGrid" Grid.Row="2" >
             <Grid.RowDefinitions>

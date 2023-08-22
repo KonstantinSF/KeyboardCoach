@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace KeyboardCoach
 {
@@ -253,7 +254,6 @@ namespace KeyboardCoach
             }
             else if (e.Key == Key.LeftShift && capsLockKey == false || e.Key == Key.RightShift && capsLockKey == false) UpperCase();
             else if (e.Key == Key.LeftShift && capsLockKey == true || e.Key == Key.RightShift && capsLockKey == true) LowerCaseCapsLock();
-
             return;
         }
 
@@ -262,6 +262,11 @@ namespace KeyboardCoach
             if (e.Key == Key.LeftShift && capsLockKey == false || e.Key == Key.RightShift && capsLockKey == false) LowerCase();
             else if (e.Key == Key.LeftShift&& capsLockKey == true || e.Key == Key.RightShift && capsLockKey == true) UpperCaseCapsLock();
             return;
+        }
+
+        private void Input_KeyDown(object sender, TextCompositionEventArgs e)
+        {
+            InputText.Text += e.Text;
         }
     }
 }
