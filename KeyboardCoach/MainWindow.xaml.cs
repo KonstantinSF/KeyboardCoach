@@ -257,15 +257,40 @@ namespace KeyboardCoach
             }
             else if (e.Key == Key.LeftShift && capsLockKey == false || e.Key == Key.RightShift && capsLockKey == false) UpperCase();
             else if (e.Key == Key.LeftShift && capsLockKey == true || e.Key == Key.RightShift && capsLockKey == true) LowerCaseCapsLock();
-            //ButtonCheck(text); 
+
+            if (e.Key == Key.Enter)
+            {
+                Enter.Visibility = Visibility.Collapsed;
+                StopBtn_Click(sender, e);
+                Start.Focus();
+            }
+            else if (e.Key == Key.Tab) Tab.Visibility = Visibility.Collapsed;
+            else if (e.Key == Key.Back) Backspace.Visibility = Visibility.Hidden;
+            else if (e.Key == Key.LeftShift) shiftLeft.Visibility = Visibility.Collapsed;
+            else if (e.Key == Key.RightShift) shiftRight.Visibility = Visibility.Collapsed;
+            else if (e.Key == Key.RightCtrl) controlRight.Visibility = Visibility.Collapsed;
+            else if (e.Key == Key.LeftCtrl) controlLeft.Visibility = Visibility.Collapsed;
+            else if (e.Key == Key.LeftAlt) altLeft.Visibility = Visibility.Collapsed;
+            else if (e.Key == Key.RightAlt) altRight.Visibility = Visibility.Collapsed;
+            else if (e.Key == Key.Space) space.Visibility = Visibility.Hidden;
             return;
         }
 
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
+            ReturnChanging();
             if (e.Key == Key.LeftShift && capsLockKey == false || e.Key == Key.RightShift && capsLockKey == false) LowerCase();
             else if (e.Key == Key.LeftShift && capsLockKey == true || e.Key == Key.RightShift && capsLockKey == true) UpperCaseCapsLock();
-            ReturnChanging();
+            if (e.Key == Key.Tab) Tab.Visibility = Visibility.Visible;
+            else if (e.Key == Key.Enter) Enter.Visibility = Visibility.Visible;
+            else if (e.Key == Key.Back) Backspace.Visibility = Visibility.Visible;
+            else if (e.Key == Key.LeftShift) shiftLeft.Visibility = Visibility.Visible;
+            else if (e.Key == Key.RightShift) shiftRight.Visibility = Visibility.Visible;
+            else if (e.Key == Key.RightCtrl) controlRight.Visibility = Visibility.Visible;
+            else if (e.Key == Key.LeftCtrl) controlLeft.Visibility = Visibility.Visible;
+            else if (e.Key == Key.LeftAlt) altLeft.Visibility = Visibility.Visible;
+            else if (e.Key == Key.RightAlt) altRight.Visibility = Visibility.Visible;
+            else if (e.Key == Key.Space) space.Visibility = Visibility.Visible;
             return;
         }
 

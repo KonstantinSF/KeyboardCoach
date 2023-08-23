@@ -113,7 +113,7 @@
                 <Button Grid.Column="10" x:Name="zero" Template="{DynamicResource btnTemplate}" Content="0" FontSize="40" Background="{DynamicResource yellow}"/>
                 <Button Grid.Column="11" x:Name="minus" Template="{DynamicResource btnTemplate}" Content="-" FontSize="40" Background="{DynamicResource green}"/>
                 <Button Grid.Column="12" x:Name="equal" Template="{DynamicResource btnTemplate}" Content="=" FontSize="40" Background="{DynamicResource green}"/>
-                <Button Grid.Column="13" Grid.ColumnSpan="2" x:Name="Bspace" Template="{DynamicResource btnTemplate}" Content="Backspace" FontSize="25" Background="{DynamicResource grey}"/>
+                <Button Grid.Column="13" Grid.ColumnSpan="2" x:Name="Backspace" Template="{DynamicResource btnTemplate}" Content="Backspace" FontSize="25" Background="{DynamicResource grey}"/>
                 </Grid>
                 <!--**************************SECOND ROW***********************************-->
                 <Grid x:Name="secondRowGrid" Grid.Row="1">
@@ -152,6 +152,7 @@
             <Grid x:Name="thirdRowGrid" Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*" />
+                    <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
