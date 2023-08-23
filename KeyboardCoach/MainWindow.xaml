@@ -14,11 +14,11 @@
                 <ContentControl FontSize="{TemplateBinding FontSize}" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}">
                 </ContentControl>
             </Border>
-            <ControlTemplate.Triggers>
+            <!--<ControlTemplate.Triggers>
                 <Trigger Property="IsPressed" Value="True">
                     <Setter TargetName="buttonBorder" Property="BorderBrush" Value="Gray"/>
                 </Trigger>
-            </ControlTemplate.Triggers>
+            </ControlTemplate.Triggers>-->
         </ControlTemplate>
         
         <SolidColorBrush x:Key="red" Color="PaleVioletRed"/>
@@ -53,16 +53,16 @@
                 <TextBlock x:Name="fails" Text="0       " FontSize="25" />
                 <TextBlock Text="Difficulty: " FontSize="25" Grid.Row="0" Grid.Column="1"/>
                 <TextBlock x:Name="difficulty" Text="0              " FontSize="25"/>
-                <Slider LargeChange="10" MaxWidth="200" MinWidth="100" Height="20" Margin="10,10,3,0" VerticalAlignment="Center" />
-                <CheckBox Content="Case Sensitive" FontSize="25" IsChecked="True" VerticalAlignment="Center" />
+                <Slider LargeChange="10" MaxWidth="200" MinWidth="100" Height="20" Margin="10,10,3,0" VerticalAlignment="Center" IsEnabled="True" IsTabStop="False"/>
+                <CheckBox Content="Case Sensitive" FontSize="25" IsChecked="True" VerticalAlignment="Center" IsEnabled="True"  IsTabStop="False"/>
             </WrapPanel>
             <Grid Grid.Row="1" Grid.Column="1" MinHeight="30">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="Start" Content="Start" Margin="5" MinWidth="100" Grid.Column="0" FontSize="18" Click="StartBtn_Click"/>
-                <Button x:Name="Stop" Content="Stop" Margin="5" MinWidth="100" Grid.Column="1" FontSize="18" Click="StopBtn_Click"/>
+                <Button x:Name="Start" Content="Start" Margin="5" MinWidth="100" Grid.Column="0" FontSize="18" Click="StartBtn_Click" IsTabStop="False"/>
+                <Button x:Name="Stop" Content="Stop" Margin="5" MinWidth="100" Grid.Column="1" FontSize="18" Click="StopBtn_Click" IsTabStop="False"/>
             </Grid>
         </Grid>
         <Grid x:Name="textBoxFieldGrid" Grid.Row="1" Background="LightBlue">
@@ -70,10 +70,10 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBox x:Name="ExampleText" FontSize="20" Margin="2" Focusable="False" Grid.Row="0" VerticalAlignment="Stretch" Background="{Binding Background, ElementName=grid}" Foreground="OrangeRed"/>
-            <TextBox x:Name="InputText" FontSize="20" VerticalAlignment="Center" Margin="2" Focusable="True" Grid.Row="1" Background="{Binding Background, ElementName=grid}" TextInput="Input_KeyDown"/>
+            <TextBox x:Name="ExampleText" FontSize="20" Margin="2" Focusable="False" Grid.Row="0" VerticalAlignment="Stretch" Background="{Binding Background, ElementName=grid}" Foreground="OrangeRed" IsTabStop="False"/>
+            <TextBox x:Name="InputText" FontSize="20" VerticalAlignment="Center" Margin="2" Focusable="True" Grid.Row="1" Background="{Binding Background, ElementName=grid}" TextInput="Input_KeyDown" TextChanged="Input_textChange"/>
         </Grid>
-        <Grid x:Name="buttonsGrid" Grid.Row="2" >
+        <Grid x:Name="buttonsGrid" Grid.Row="2" IsEnabled="False">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -81,7 +81,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Grid x:Name="firstRowGrid" Grid.Row="0">
+            <Grid x:Name="firstRowGrid" Grid.Row="0" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -100,7 +100,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <!--**************************FIRST ROW***********************************-->
-                <Button Grid.Column="0" x:Name="gravis" Template="{DynamicResource btnTemplate}" Content="`" FontSize="40" Background="{DynamicResource red}"/>
+                <Button Grid.Column="0" x:Name="gravis" Template="{DynamicResource btnTemplate}" Content="`" FontSize="40" Background="{DynamicResource red}" IsTabStop="False"/>
                 <Button Grid.Column="1" x:Name="one" Template="{DynamicResource btnTemplate}" Content="1" FontSize="40" Background="{DynamicResource red}"/>
                 <Button Grid.Column="2" x:Name="two" Template="{DynamicResource btnTemplate}" Content="2" FontSize="40" Background="{DynamicResource red}"/>
                 <Button Grid.Column="3" x:Name="three" Template="{DynamicResource btnTemplate}" Content="3" FontSize="40" Background="{DynamicResource yellow}"/>

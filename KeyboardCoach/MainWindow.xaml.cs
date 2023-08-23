@@ -1,6 +1,7 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
 
 namespace KeyboardCoach
 {
@@ -10,6 +11,7 @@ namespace KeyboardCoach
     public partial class MainWindow : Window
     {
         bool capsLockKey = false;
+        string text = null;
         public MainWindow()
         {
             InitializeComponent();
@@ -22,6 +24,7 @@ namespace KeyboardCoach
 
         private void StopBtn_Click(object sender, RoutedEventArgs e)
         {
+            text = null;
             InputText.Clear();
         }
         private void LowerCase()
@@ -249,24 +252,65 @@ namespace KeyboardCoach
             }
             else if (e.Key == Key.CapsLock && capsLockKey == true)
             {
-                capsLockKey = false; 
+                capsLockKey = false;
                 LowerCase();
             }
             else if (e.Key == Key.LeftShift && capsLockKey == false || e.Key == Key.RightShift && capsLockKey == false) UpperCase();
             else if (e.Key == Key.LeftShift && capsLockKey == true || e.Key == Key.RightShift && capsLockKey == true) LowerCaseCapsLock();
+            //ButtonCheck(text); 
             return;
         }
 
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.LeftShift && capsLockKey == false || e.Key == Key.RightShift && capsLockKey == false) LowerCase();
-            else if (e.Key == Key.LeftShift&& capsLockKey == true || e.Key == Key.RightShift && capsLockKey == true) UpperCaseCapsLock();
+            else if (e.Key == Key.LeftShift && capsLockKey == true || e.Key == Key.RightShift && capsLockKey == true) UpperCaseCapsLock();
+            ReturnChanging();
             return;
         }
 
         private void Input_KeyDown(object sender, TextCompositionEventArgs e)
         {
             InputText.Text += e.Text;
+            return;
+        }
+        private void ButtonCheck(string text)
+        {
+            foreach (var item in buttonsGrid.Children.OfType<Grid>().Where(g => g.Children.Count <= 15))
+            {
+                foreach (var button in item.Children.OfType<Button>())
+                {
+                    if (button.Content.ToString() == text)
+                    {
+                        button.Visibility = Visibility.Hidden;
+                        return;
+                    }
+                }
+            }
+        }
+
+        private void Input_textChange(object sender, TextChangedEventArgs e)
+        {
+            if (InputText.Text != "") 
+                text = InputText.Text.Substring(InputText.Text.Length - 1);
+            if (text != null) ButtonCheck(text);
+        }
+        private void ReturnChanging()
+        {
+            if (!string.IsNullOrEmpty(InputText.Text))
+            {
+                foreach (var item in buttonsGrid.Children.OfType<Grid>().Where(g => g.Children.Count <= 15))
+                {
+                    foreach (var button in item.Children.OfType<Button>())
+                    {
+                        if (button.Content.ToString() == text)
+                        {
+                            button.Visibility = Visibility.Visible;
+                            return;
+                        }
+                    }
+                }
+            }
         }
     }
 }
