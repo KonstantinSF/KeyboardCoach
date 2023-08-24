@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -14,7 +15,7 @@ namespace KeyboardCoach
         bool capsLockKey = false;
         string text = null;
         string tempName = null;
-        Brush tempColor=null; 
+        Brush tempColor = null;
         public MainWindow()
         {
             InitializeComponent();
@@ -23,12 +24,12 @@ namespace KeyboardCoach
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
             InputText.Focus();
+            ExampleText.Text = TextGenerator();
         }
 
         private void StopBtn_Click(object sender, RoutedEventArgs e)
         {
             text = null;
-            gravis.UpdateDefaultStyle(); 
             InputText.Clear();
         }
         private void LowerCase()
@@ -269,13 +270,13 @@ namespace KeyboardCoach
                 case Key.Enter:
                     Enter.Background = new SolidColorBrush(Colors.Red);
                     StopBtn_Click(sender, e);
-                    Start.Focus();break; 
+                    Start.Focus(); break;
                 case Key.Tab: Tab.Background = new SolidColorBrush(Colors.Red); break;
                 case Key.Back: Backspace.Background = new SolidColorBrush((Color)Colors.Red); break;
-                case Key.LeftShift: shiftLeft.Background = new SolidColorBrush(((Color)Colors.Red));break;
+                case Key.LeftShift: shiftLeft.Background = new SolidColorBrush(((Color)Colors.Red)); break;
                 case Key.RightShift: shiftRight.Background = new SolidColorBrush(Colors.Red); break;
-                case Key.LeftCtrl: controlLeft.Background = new SolidColorBrush(Colors.Red); break;  
-                case Key.RightCtrl: controlRight.Background = new SolidColorBrush(Colors.Red); break;  
+                case Key.LeftCtrl: controlLeft.Background = new SolidColorBrush(Colors.Red); break;
+                case Key.RightCtrl: controlRight.Background = new SolidColorBrush(Colors.Red); break;
             }
             return;
         }
@@ -317,7 +318,7 @@ namespace KeyboardCoach
                     {
                         tempColor = button.Background;
                         tempName = button.Name;
-                        button.Background= new SolidColorBrush(Colors.Red);
+                        button.Background = new SolidColorBrush(Colors.Red);
                         return;
                     }
                 }
@@ -326,13 +327,19 @@ namespace KeyboardCoach
 
         private void Input_textChange(object sender, TextChangedEventArgs e)
         {
-            if (InputText.Text != "") 
+            if (InputText.Text != "")
                 text = InputText.Text.Substring(InputText.Text.Length - 1);
             if (text != null) ButtonCheck(text);
+            if (caseSensitive.IsChecked == false) 
+            {
+                InputText.Text=InputText.Text.ToLower();
+                int l = InputText.Text.Length;
+                InputText.SelectionStart=l; 
+            }
         }
         private void ReturnChanging()
         {
-            if (tempColor != null) 
+            if (tempColor != null)
             {
                 foreach (var item in buttonsGrid.Children.OfType<Grid>().Where(g => g.Children.Count <= 15))
                 {
@@ -346,6 +353,28 @@ namespace KeyboardCoach
                     }
                 }
             }
+        }
+        private string TextGenerator()
+        {
+            string textExample = null;
+            string symbols = "asdfghjkl;'\\zxcvbnm,./qwertyuiop[]`1234567890-=~!@#$%^&*()_+{}:\"|<>?";
+            string capitalSymbols = "QWERTYUIOPASDFGHJKLZXCVBNM"; 
+            switch (slider.Value)
+            {
+                case 0: symbols = symbols.Substring(0, 11); break;
+                case 1: symbols = symbols.Substring(0, 22); break;
+                case 2: symbols = symbols.Substring(0, 33); break;
+                case 3: symbols = symbols.Substring(0, 44); break;
+                case 4: symbols = symbols.Substring(0, 55); break;
+                case 5: symbols = symbols.Substring(0, symbols.Length-1); break;
+            }
+            if (caseSensitive.IsChecked == true) symbols = symbols + capitalSymbols; 
+            Random rand = new Random();
+            for (int i = 0; i < symbols.Length; i++)
+            {
+                textExample += symbols[rand.Next(0, symbols.Length-1)];
+            }
+            return textExample;
         }
     }
 }

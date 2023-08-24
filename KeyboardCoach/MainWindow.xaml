@@ -57,8 +57,8 @@
                 <TextBlock x:Name="fails" Text="0       " FontSize="25" />
                 <TextBlock Text="Difficulty: " FontSize="25" Grid.Row="0" Grid.Column="1"/>
                 <TextBlock x:Name="difficulty" Text="0              " FontSize="25"/>
-                <Slider LargeChange="10" MaxWidth="200" MinWidth="100" Height="20" Margin="10,10,3,0" VerticalAlignment="Center" IsEnabled="True" IsTabStop="False"/>
-                <CheckBox Content="Case Sensitive" FontSize="25" IsChecked="True" VerticalAlignment="Center" IsEnabled="True"  IsTabStop="False"/>
+                <Slider x:Name="slider" LargeChange="10" MaxWidth="200" MinWidth="100" Height="35" Margin="10,10,3,0" VerticalAlignment="Top" IsEnabled="True" IsTabStop="False" Maximum="5" Minimum="0" TickPlacement="Both" IsSnapToTickEnabled="True" TickFrequency="1"/>
+                <CheckBox x:Name="caseSensitive" Content="Case Sensitive" FontSize="25" IsChecked="True" VerticalAlignment="Center" IsEnabled="True"  IsTabStop="False"/>
             </WrapPanel>
             <Grid Grid.Row="1" Grid.Column="1" MinHeight="30">
                 <Grid.ColumnDefinitions>
@@ -74,8 +74,8 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBox x:Name="ExampleText" FontSize="20" Margin="2" Focusable="False" Grid.Row="0" VerticalAlignment="Stretch" Background="{Binding Background, ElementName=grid}" Foreground="OrangeRed" IsTabStop="False"/>
-            <TextBox x:Name="InputText" FontSize="20" VerticalAlignment="Center" Margin="2" Focusable="True" Grid.Row="1" Background="{Binding Background, ElementName=grid}" TextInput="Input_KeyDown" TextChanged="Input_textChange"/>
+            <TextBox x:Name="ExampleText" FontSize="23" Margin="2" Focusable="False" Grid.Row="0" VerticalAlignment="Stretch" Background="{Binding Background, ElementName=grid}" Foreground="OrangeRed" IsTabStop="False"/>
+            <TextBox x:Name="InputText" FontSize="23" VerticalAlignment="Center" Margin="2" Focusable="True" Grid.Row="1" Background="{Binding Background, ElementName=grid}" TextInput="Input_KeyDown" TextChanged="Input_textChange"/>
         </Grid>
         <Grid x:Name="buttonsGrid" Grid.Row="2" IsEnabled="False">
             <Grid.RowDefinitions>
