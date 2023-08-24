@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace KeyboardCoach
 {
@@ -12,6 +13,8 @@ namespace KeyboardCoach
     {
         bool capsLockKey = false;
         string text = null;
+        string tempName = null;
+        Brush tempColor=null; 
         public MainWindow()
         {
             InitializeComponent();
@@ -25,6 +28,7 @@ namespace KeyboardCoach
         private void StopBtn_Click(object sender, RoutedEventArgs e)
         {
             text = null;
+            gravis.UpdateDefaultStyle(); 
             InputText.Clear();
         }
         private void LowerCase()
@@ -248,31 +252,31 @@ namespace KeyboardCoach
             if (e.Key == Key.CapsLock && capsLockKey == false)
             {
                 capsLockKey = true;
+                capsLock.Background = new SolidColorBrush(Colors.Red);
                 UpperCaseCapsLock();
             }
             else if (e.Key == Key.CapsLock && capsLockKey == true)
             {
                 capsLockKey = false;
+                capsLock.Background = new SolidColorBrush(Colors.Gray);
                 LowerCase();
             }
             else if (e.Key == Key.LeftShift && capsLockKey == false || e.Key == Key.RightShift && capsLockKey == false) UpperCase();
             else if (e.Key == Key.LeftShift && capsLockKey == true || e.Key == Key.RightShift && capsLockKey == true) LowerCaseCapsLock();
 
-            if (e.Key == Key.Enter)
+            switch (e.Key)
             {
-                Enter.Visibility = Visibility.Collapsed;
-                StopBtn_Click(sender, e);
-                Start.Focus();
+                case Key.Enter:
+                    Enter.Background = new SolidColorBrush(Colors.Red);
+                    StopBtn_Click(sender, e);
+                    Start.Focus();break; 
+                case Key.Tab: Tab.Background = new SolidColorBrush(Colors.Red); break;
+                case Key.Back: Backspace.Background = new SolidColorBrush((Color)Colors.Red); break;
+                case Key.LeftShift: shiftLeft.Background = new SolidColorBrush(((Color)Colors.Red));break;
+                case Key.RightShift: shiftRight.Background = new SolidColorBrush(Colors.Red); break;
+                case Key.LeftCtrl: controlLeft.Background = new SolidColorBrush(Colors.Red); break;  
+                case Key.RightCtrl: controlRight.Background = new SolidColorBrush(Colors.Red); break;  
             }
-            else if (e.Key == Key.Tab) Tab.Visibility = Visibility.Collapsed;
-            else if (e.Key == Key.Back) Backspace.Visibility = Visibility.Hidden;
-            else if (e.Key == Key.LeftShift) shiftLeft.Visibility = Visibility.Collapsed;
-            else if (e.Key == Key.RightShift) shiftRight.Visibility = Visibility.Collapsed;
-            else if (e.Key == Key.RightCtrl) controlRight.Visibility = Visibility.Collapsed;
-            else if (e.Key == Key.LeftCtrl) controlLeft.Visibility = Visibility.Collapsed;
-            else if (e.Key == Key.LeftAlt) altLeft.Visibility = Visibility.Collapsed;
-            else if (e.Key == Key.RightAlt) altRight.Visibility = Visibility.Collapsed;
-            else if (e.Key == Key.Space) space.Visibility = Visibility.Hidden;
             return;
         }
 
@@ -281,16 +285,20 @@ namespace KeyboardCoach
             ReturnChanging();
             if (e.Key == Key.LeftShift && capsLockKey == false || e.Key == Key.RightShift && capsLockKey == false) LowerCase();
             else if (e.Key == Key.LeftShift && capsLockKey == true || e.Key == Key.RightShift && capsLockKey == true) UpperCaseCapsLock();
-            if (e.Key == Key.Tab) Tab.Visibility = Visibility.Visible;
-            else if (e.Key == Key.Enter) Enter.Visibility = Visibility.Visible;
-            else if (e.Key == Key.Back) Backspace.Visibility = Visibility.Visible;
-            else if (e.Key == Key.LeftShift) shiftLeft.Visibility = Visibility.Visible;
-            else if (e.Key == Key.RightShift) shiftRight.Visibility = Visibility.Visible;
-            else if (e.Key == Key.RightCtrl) controlRight.Visibility = Visibility.Visible;
-            else if (e.Key == Key.LeftCtrl) controlLeft.Visibility = Visibility.Visible;
-            else if (e.Key == Key.LeftAlt) altLeft.Visibility = Visibility.Visible;
-            else if (e.Key == Key.RightAlt) altRight.Visibility = Visibility.Visible;
-            else if (e.Key == Key.Space) space.Visibility = Visibility.Visible;
+
+            switch (e.Key)
+            {
+                case Key.Enter:
+                    Enter.Background = new SolidColorBrush(Colors.Gray);
+                    StopBtn_Click(sender, e);
+                    Start.Focus(); break;
+                case Key.Tab: Tab.Background = new SolidColorBrush(Colors.Gray); break;
+                case Key.Back: Backspace.Background = new SolidColorBrush((Color)Colors.Gray); break;
+                case Key.LeftShift: shiftLeft.Background = new SolidColorBrush(((Color)Colors.Gray)); break;
+                case Key.RightShift: shiftRight.Background = new SolidColorBrush(Colors.Gray); break;
+                case Key.LeftCtrl: controlLeft.Background = new SolidColorBrush(Colors.Gray); break;
+                case Key.RightCtrl: controlRight.Background = new SolidColorBrush(Colors.Gray); break;
+            }
             return;
         }
 
@@ -307,7 +315,9 @@ namespace KeyboardCoach
                 {
                     if (button.Content.ToString() == text)
                     {
-                        button.Visibility = Visibility.Hidden;
+                        tempColor = button.Background;
+                        tempName = button.Name;
+                        button.Background= new SolidColorBrush(Colors.Red);
                         return;
                     }
                 }
@@ -322,15 +332,15 @@ namespace KeyboardCoach
         }
         private void ReturnChanging()
         {
-            if (!string.IsNullOrEmpty(InputText.Text))
+            if (tempColor != null) 
             {
                 foreach (var item in buttonsGrid.Children.OfType<Grid>().Where(g => g.Children.Count <= 15))
                 {
                     foreach (var button in item.Children.OfType<Button>())
                     {
-                        if (button.Content.ToString() == text)
+                        if (button.Name == tempName)
                         {
-                            button.Visibility = Visibility.Visible;
+                            button.Background = tempColor;
                             return;
                         }
                     }
