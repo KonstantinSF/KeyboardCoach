@@ -290,9 +290,7 @@ namespace KeyboardCoach
             switch (e.Key)
             {
                 case Key.Enter:
-                    Enter.Background = new SolidColorBrush(Colors.Gray);
-                    StopBtn_Click(sender, e);
-                    Start.Focus(); break;
+                    Enter.Background = new SolidColorBrush(Colors.Gray);break;
                 case Key.Tab: Tab.Background = new SolidColorBrush(Colors.Gray); break;
                 case Key.Back: Backspace.Background = new SolidColorBrush((Color)Colors.Gray); break;
                 case Key.LeftShift: shiftLeft.Background = new SolidColorBrush(((Color)Colors.Gray)); break;
